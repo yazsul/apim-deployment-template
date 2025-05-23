@@ -1,0 +1,21 @@
+<policies>
+  <inbound>
+    <base />
+  </inbound>
+  <backend>
+    <base />
+  </backend>
+  <outbound>
+    <base />
+  </outbound>
+  <on-error>
+    <base />
+    <return-response>
+      <set-status code="500" reason="Internal Server Error" />
+      <set-header name="X-Error-Source" exists-action="override">
+        <value>API Management</value>
+      </set-header>
+      <set-body>{"error": "An unexpected error occurred"}</set-body>
+    </return-response>
+  </on-error>
+</policies>
