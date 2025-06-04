@@ -67,10 +67,10 @@ resource "azurerm_api_management_product" "product" {
 }
 
 # ----------------------------------------
-# Product Policy (from controlled templates)
+# API Policy (from controlled templates)
 # ----------------------------------------
-resource "azurerm_api_management_product_policy" "product_policy" {
-  product_id          = azurerm_api_management_product.product.product_id
+resource "azurerm_api_management_api_policy" "api_policy" {
+  api_name            = azurerm_api_management_api.api.name
   resource_group_name = var.resource_group_name
   api_management_name = var.service_name
 

@@ -2,6 +2,8 @@ provider "azurerm" {
   features {}
 }
 
+data "azurerm_subscription" "current" {}
+
 data "azurerm_api_management_user" "admin" {
   user_id             = "1"
   api_management_name = var.service_name
